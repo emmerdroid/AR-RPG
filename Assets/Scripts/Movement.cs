@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody), typeof(Collider))]
@@ -8,6 +9,9 @@ public class Movement : MonoBehaviour
     [SerializeField] Rigidbody rb;
     [SerializeField] Collider coll;
     [SerializeField] float speed;
+    public enum DIRECTION{up, down, left, right};
+    public DIRECTION dir;
+    public DIRECTION cameFrom;
 
     [SerializeField] FixedJoystick joyStick;
     // Start is called before the first frame update
@@ -28,5 +32,13 @@ public class Movement : MonoBehaviour
         {
             transform.rotation = Quaternion.LookRotation(rb.velocity);
         }
+        
+    }
+
+    private void Update() {
+        //calculate the diredtion
+
+        Vector2 normalizedVector = new Vector2(rb.velocity.x, rb.velocity.z).normalized;
+        
     }
 }

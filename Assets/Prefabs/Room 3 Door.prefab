@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 342332804559853093}
   - component: {fileID: 8810195329350884774}
   m_Layer: 0
-  m_Name: LeftColl
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Name: LeftCol
+  m_TagString: Doorway
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2053360212602819550}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.298, y: 0.81323224, z: 0.01}
+  m_LocalPosition: {x: -2.7, y: 0.81323224, z: 0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56,9 +56,9 @@ GameObject:
   - component: {fileID: 2898651822897425562}
   - component: {fileID: 8333995157193406357}
   m_Layer: 0
-  m_Name: UpColl
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Name: UpCol
+  m_TagString: Doorway
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -70,7 +70,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2836826444026859584}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2.25}
+  m_LocalPosition: {x: 0, y: 0, z: 2.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 7074941179970923259}
   m_Layer: 0
   m_Name: Colliders
-  m_TagString: Untagged
+  m_TagString: Doorway
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -329,9 +329,9 @@ GameObject:
   - component: {fileID: 4629258665858126939}
   - component: {fileID: 1764267961537240407}
   m_Layer: 0
-  m_Name: DownColl
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Name: DownCol
+  m_TagString: Doorway
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -343,7 +343,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7009525936741741199}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2.25}
+  m_LocalPosition: {x: 0, y: 0, z: -2.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -552,6 +552,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7881969203267215569, guid: b00b6f7e3a61243b29ec80188d750f4e,
+        type: 3}
+      propertyPath: doorways.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7881969203267215569, guid: b00b6f7e3a61243b29ec80188d750f4e,
+        type: 3}
+      propertyPath: doorways.Array.data[0]
+      value: 
+      objectReference: {fileID: 8333995157193406357}
+    - target: {fileID: 7881969203267215569, guid: b00b6f7e3a61243b29ec80188d750f4e,
+        type: 3}
+      propertyPath: doorways.Array.data[1]
+      value: 
+      objectReference: {fileID: 8810195329350884774}
+    - target: {fileID: 7881969203267215569, guid: b00b6f7e3a61243b29ec80188d750f4e,
+        type: 3}
+      propertyPath: doorways.Array.data[2]
+      value: 
+      objectReference: {fileID: 1764267961537240407}
     - target: {fileID: 8952564073500999720, guid: b00b6f7e3a61243b29ec80188d750f4e,
         type: 3}
       propertyPath: m_LocalScale.z

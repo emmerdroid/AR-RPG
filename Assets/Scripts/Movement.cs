@@ -32,6 +32,11 @@ public class Movement : MonoBehaviour
         {
             transform.rotation = Quaternion.LookRotation(rb.velocity);
         }
+        else
+        {
+            Quaternion.Euler(0,0,0);
+        }
+
         
     }
 
@@ -41,4 +46,35 @@ public class Movement : MonoBehaviour
         Vector2 normalizedVector = new Vector2(rb.velocity.x, rb.velocity.z).normalized;
         
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Doorway")) 
+        {
+            if (other.name == "UpCol")
+            {
+                cameFrom = DIRECTION.up;
+            }
+            else if (other.name == "DownCol")
+            {
+                cameFrom = DIRECTION.down;
+            }
+
+            else if (other.name == "LeftCol")
+            {
+                cameFrom = DIRECTION.left;
+            }
+            else if(other.name == "RightCol")
+            {
+                cameFrom = DIRECTION.right;
+            }
+
+
+
+            FindObjectOfType<Dungeon>().TransitionToRoom(cameFrom);
+           
+        }
+    }
+
+    
 }

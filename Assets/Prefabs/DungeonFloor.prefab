@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 3954757751002038923}
   - component: {fileID: 3954757751002038922}
   - component: {fileID: 3954757751002038921}
+  - component: {fileID: 1251343878999097604}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: DungeonFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,3 +99,23 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1251343878999097604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3954757751002038920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d75c0811ca84b098a28c43d87bc54e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rooms:
+  - {fileID: 2459440598210367934, guid: a3ac21730a54b464f95f1826a4e06e24, type: 3}
+  - {fileID: 2715371377633095185, guid: 11664bde6ca8343ec9d4f431fa42358e, type: 3}
+  - {fileID: 2432157431000108206, guid: 08fbfa485df034a468156628452d8f67, type: 3}
+  size: 3
+  playerPos: 0
+  currentRoom: {fileID: 0}
+  player: {fileID: 0}

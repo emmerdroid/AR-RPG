@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Doorway
+  - SpawnPoint
+  - Room
   layers:
   - Default
   - TransparentFX

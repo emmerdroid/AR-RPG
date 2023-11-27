@@ -5,9 +5,11 @@ using UnityEngine;
 public class DungeonGeneration : MonoBehaviour
 {
 
-    public GameObject[] rooms;
-    public int dungeonSize;
-    public Dungeon gen_Dungeon;
+
+    public GameObject[] bottomRooms;
+    public GameObject[] topRooms;
+    public GameObject[] leftRooms;
+    public GameObject[] rightRooms;
 
     //use the dungeonSize to create an n x n grid,
     //attach the room types together to create this dungeon. 
@@ -17,7 +19,7 @@ public class DungeonGeneration : MonoBehaviour
     //each room is a 5x5 unity unit area
     // when going through need to transfer data of the direction and to go to the next room
     //on the map
-    
+
     // Start is called before the first frame update
     void Start()
     {

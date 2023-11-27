@@ -49,9 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34eef2e7b125e499582089de1887534e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doors: {fileID: 0}
   doorways: []
-  dungeonHandler: {fileID: 0}
 --- !u!1 &647805109893417643
 GameObject:
   m_ObjectHideFlags: 0

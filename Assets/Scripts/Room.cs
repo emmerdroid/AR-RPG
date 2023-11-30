@@ -33,10 +33,10 @@ public class Room : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (isEmpty)
-        {
-            room.SetActive(false);
-        }
+        //if (isEmpty)
+        //{
+        //    room.SetActive(false);
+        //}
 
     }
 
@@ -63,42 +63,42 @@ public class Room : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
-    {
-        Debug.Log("Room Clear");
-    }
+    //private void OnDestroy()
+    //{
+    //    //Debug.Log("Room Clear");
+    //}
 
-    private void OnTriggerStay(Collider other)
-    {
-        Debug.Log("Something inside");
-        if (other.CompareTag("Player"))
-        {
-            room.SetActive(true);
-            Debug.Log("Player Inside");
-        }
-        isEmpty = false;
-    }
+    //private void OnTriggerStay(Collider other)
+    //{
+    //   // Debug.Log("Something inside");
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        room.SetActive(true);
+    //        //Debug.Log("Player Inside");
+    //    }
+    //    isEmpty = false;
+    //}
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Something Entered");
-        if (other.CompareTag("Player"))
-        {
-            room.SetActive(true);
-            Debug.Log("Player Entered");
-        }
-        isEmpty = false;
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    //Debug.Log("Something Entered");
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        room.SetActive(true);
+    //        //Debug.Log("Player Entered");
+    //    }
+    //    isEmpty = false;
+    //}
 
-    private void OnTriggerExit(Collider other)
-    {
-        Debug.Log("Something Exited");
-        if (other.CompareTag("Player"))
-        {
-            room.SetActive(false);
-            Debug.Log("Player exited");
-            isEmpty = true;
-        }
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    //Debug.Log("Something Exited");
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        room.SetActive(false);
+    //        //Debug.Log("Player exited");
+    //        isEmpty = true;
+    //    }
+    //}
 
 }

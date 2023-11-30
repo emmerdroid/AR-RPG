@@ -19,6 +19,7 @@ public class Movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         coll = GetComponent<CapsuleCollider>();
+        //Invoke("EnableGravity", 0.3f);
 
     }
 
@@ -37,6 +38,7 @@ public class Movement : MonoBehaviour
             Quaternion.Euler(0,0,0);
         }
 
+
         
     }
 
@@ -45,6 +47,11 @@ public class Movement : MonoBehaviour
 
         Vector2 normalizedVector = new Vector2(rb.velocity.x, rb.velocity.z).normalized;
         
+    }
+
+    void EnableGravity()
+    {
+        rb.useGravity = true;
     }
 
     private void OnTriggerEnter(Collider other)

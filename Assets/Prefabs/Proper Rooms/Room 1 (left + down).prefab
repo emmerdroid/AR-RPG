@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Direction: Left
   roomPresent: 0
+  dungeonController: {fileID: 0}
 --- !u!54 &3799528006050185916
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -220,6 +221,7 @@ MonoBehaviour:
   area: {fileID: 6524403986101890540}
   room: {fileID: 6337506558910387839}
   isEmpty: 0
+  mainDungeon: {fileID: 0}
 --- !u!65 &6524403986101890540
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -281,6 +283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Direction: Down
   roomPresent: 0
+  dungeonController: {fileID: 0}
 --- !u!54 &4058037677947667545
 Rigidbody:
   m_ObjectHideFlags: 0

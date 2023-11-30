@@ -11,7 +11,7 @@ public class RoomSpawner : MonoBehaviour
     int random;
     private RoomTypes roomType;
     [SerializeField]private bool roomPresent = false;
-    int limit = 9;
+    int limit = 6;
     int ammount;
     [SerializeField] Dungeon dungeonController;
 
@@ -23,7 +23,7 @@ public class RoomSpawner : MonoBehaviour
     {
         //Destroy(gameObject, 2f);
         roomType = GameObject.FindGameObjectWithTag("Room").GetComponent<RoomTypes>();
-        Invoke("Spawn", 0.1f);
+        Invoke("Spawn", 0.2f);
         ammount = 0;
         dungeonController = FindObjectOfType<Dungeon>();
     }

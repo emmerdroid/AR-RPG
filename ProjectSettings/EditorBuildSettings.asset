@@ -11,14 +11,24 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestingRoom.unity
     guid: 117ad52fe205541fd9bb5b686be6b4cf
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 290fb1d1fc9784747b9bc4c59ab86e37
+  - enabled: 1
+    path: Assets/Scenes/BlankAR.unity
+    guid: 6bdce89659816455b9f906fc62d19910
+  - enabled: 0
+    path: Assets/Scenes/Settings.unity
+    guid: e62dea6b8769df74080c05684ddf20c7
+  - enabled: 1
+    path: Assets/Scenes/Game Scene.unity
+    guid: 4cf0a852112b5d74881c1a4858823564
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 89a6d18d3df8d3e4fa917b0f9a963bc0,
       type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: de8a8e4f987434338a4b1062feb8d069,
-      type: 2}
-    com.unity.input.settings: {fileID: 11400000, guid: 703964ba4c66e4f52933a01cadae82dd,
       type: 2}
     com.unity.xr.arcore.PlayerSettings: {fileID: 11400000, guid: c2f7b8d7c0bff4d10874cbcf3f24af78,
       type: 2}

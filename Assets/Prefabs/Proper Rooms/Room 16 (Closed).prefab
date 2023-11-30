@@ -66,6 +66,8 @@ MonoBehaviour:
   doorways: []
   area: {fileID: 0}
   room: {fileID: 0}
+  isEmpty: 0
+  mainDungeon: {fileID: 0}
 --- !u!1001 &1171823816568543769
 PrefabInstance:
   m_ObjectHideFlags: 0

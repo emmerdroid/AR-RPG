@@ -45,6 +45,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701ea663ff1af5547a6f92b642f86d20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3132795557680464765
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7729168414393635662}
+  - component: {fileID: 3557926474652031677}
+  m_Layer: 0
+  m_Name: RightCol
+  m_TagString: Doorway
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7729168414393635662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3132795557680464765}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.25, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1296012895892930193}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3557926474652031677
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3132795557680464765}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12, y: 2.3, z: 1.5}
+  m_Center: {x: 0, y: 0.75, z: 0}
 --- !u!1 &5338816640966825618
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,56 +229,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorways:
-  - {fileID: 4219644390200888666}
+  - {fileID: 0}
   area: {fileID: -7431001901960164388}
   room: {fileID: 8739008363523360454}
   isEmpty: 0
   mainDungeon: {fileID: 0}
---- !u!1 &7408493231089074139
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4329908881610311775}
-  - component: {fileID: 4219644390200888666}
-  m_Layer: 0
-  m_Name: RightCol
-  m_TagString: Doorway
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4329908881610311775
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7408493231089074139}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.000023290515}
-  m_LocalPosition: {x: 2, y: 0.615, z: 0.13239013}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1296012895892930193}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 179.997, z: 0}
---- !u!65 &4219644390200888666
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7408493231089074139}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.7, z: 0.7}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8739008363523360454
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,8 +266,8 @@ Transform:
   - {fileID: 5991212967794239848}
   - {fileID: 4563017209843889536}
   - {fileID: 4369329455288156582}
-  - {fileID: 4329908881610311775}
   - {fileID: 5898549675623802203}
+  - {fileID: 7729168414393635662}
   m_Father: {fileID: 3782875613024516662}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -701,7 +701,7 @@ PrefabInstance:
     - target: {fileID: 3702884136049228305, guid: 8790f5475dc7010429a4b86b6dae403f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3702884136049228305, guid: 8790f5475dc7010429a4b86b6dae403f,
         type: 3}

@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
     public DIRECTION cameFrom;
 
     [SerializeField] FixedJoystick joyStick;
+    public GameObject Y_Constraint;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +47,10 @@ public class Movement : MonoBehaviour
         //calculate the diredtion
 
         Vector2 normalizedVector = new Vector2(rb.velocity.x, rb.velocity.z).normalized;
+
+        //keep Y to y constraint
+        transform.position = new Vector3(transform.position.x, 
+            Y_Constraint.transform.position.y, transform.position.z);
         
     }
 

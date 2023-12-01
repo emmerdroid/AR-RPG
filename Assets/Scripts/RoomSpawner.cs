@@ -40,7 +40,7 @@ public class RoomSpawner : MonoBehaviour
                 random = Random.Range(0, roomType.bottomRooms.Length);
                 var room = Instantiate(roomType.bottomRooms[random], transform.position, roomType.bottomRooms[random].transform.rotation);
                 room.transform.localScale = room.transform.localScale * dungeonController.scale;
-                room.transform.parent = gameObject.transform;
+                room.transform.parent = dungeonController.gameObject.transform;
                 ammount++;
             }
             else if(Direction == "Down")
@@ -49,7 +49,7 @@ public class RoomSpawner : MonoBehaviour
                 random = Random.Range(0, roomType.topRooms.Length);
                 var room = Instantiate(roomType.topRooms[random], transform.position, roomType.topRooms[random].transform.rotation);
                 room.transform.localScale = room.transform.localScale * dungeonController.scale;
-                room.transform.parent = gameObject.transform;
+                room.transform.parent = dungeonController.gameObject.transform;
                 ammount++;
             }
             else if (Direction =="Right")
@@ -58,7 +58,7 @@ public class RoomSpawner : MonoBehaviour
                 random = Random.Range(0, roomType.leftRooms.Length);
                 var room = Instantiate(roomType.leftRooms[random], transform.position, roomType.leftRooms[random].transform.rotation);
                 room.transform.localScale = room.transform.localScale * dungeonController.scale;
-                room.transform.parent = gameObject.transform;
+                room.transform.parent = dungeonController.gameObject.transform;
                 ammount++;
 
             }
@@ -68,7 +68,7 @@ public class RoomSpawner : MonoBehaviour
                 random = Random.Range(0, roomType.rightRooms.Length);
                 var room = Instantiate(roomType.rightRooms[random], transform.position, roomType.rightRooms[random].transform.rotation) ;
                 room.transform.localScale = room.transform.localScale * dungeonController.scale;
-                room.transform.parent = gameObject.transform;
+                room.transform.parent = dungeonController.gameObject.transform;
 
                 ammount++;
             }

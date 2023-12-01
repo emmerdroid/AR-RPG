@@ -157,13 +157,14 @@ Transform:
   m_GameObject: {fileID: 2780992159664332149}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4465797753038890456}
   - {fileID: 2780992159846201290}
   - {fileID: 1187277507975253173}
   - {fileID: 683612420}
+  - {fileID: 3996792390658680670}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -228,6 +229,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4465797753038890456}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6070270011964514242
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3996792390658680670}
+  m_Layer: 0
+  m_Name: Y-Axis
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3996792390658680670
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6070270011964514242}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2780992159664332150}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6943443250266551019
 GameObject:
@@ -313,7 +345,7 @@ PrefabInstance:
     - target: {fileID: 1251343878999097604, guid: c2ab880592d5b49399a951aa27e324f7,
         type: 3}
       propertyPath: scale
-      value: 0.03
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1251343878999097604, guid: c2ab880592d5b49399a951aa27e324f7,
         type: 3}
@@ -334,7 +366,7 @@ PrefabInstance:
         type: 3}
       propertyPath: leftEnt
       value: 
-      objectReference: {fileID: 4218992455930046847}
+      objectReference: {fileID: 6943443250266551019}
     - target: {fileID: 1251343878999097604, guid: c2ab880592d5b49399a951aa27e324f7,
         type: 3}
       propertyPath: rightEnt
@@ -627,6 +659,11 @@ PrefabInstance:
       propertyPath: joyStick
       value: 
       objectReference: {fileID: 1026498336278216009}
+    - target: {fileID: 9103962859686636300, guid: 1c1e56a3ec58ae44ba618b9d1fe73c9b,
+        type: 3}
+      propertyPath: Y_Constraint
+      value: 
+      objectReference: {fileID: 6070270011964514242}
     - target: {fileID: 9103962859686636301, guid: 1c1e56a3ec58ae44ba618b9d1fe73c9b,
         type: 3}
       propertyPath: m_Name

@@ -2,45 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float lookRadius = 2f;
-
+    public float lookRadius;
+    public float speed;
     Transform target;
-    NavMeshAgent agent;
-    float range = 6;
+    
+    //get reference to the dugneon scale
+    public Dungeon mainDungeon;
 
     // Start is called before the first frame update
     void Start()
     {
-        target = PlayerManager.instance.player.transform;
-        agent = GetComponent<NavMeshAgent>();
+        target = FindObjectOfType<Movement>().gameObject.transform;
+        
+        mainDungeon = FindObjectOfType<Dungeon>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector3.Distance(target.position, transform.position);
+        float distance = Vector3.Distance(target.position, transform.position) * mainDungeon.scale;
 
-        if(distance <= lookRadius)
+        //do nothing/ idle
+        if(distance > lookRadius * mainDungeon.scale * 0.25f)
         {
-            agent.SetDestination(target.position);
-
-            if(distance <= agent.stoppingDistance)
-            {
-
-            }
+            Debug.Log("Idling doing nothing");
+            Debug.Log($"{distance} and radius is {lookRadius * mainDungeon.scale}" );
         }
-        else if(agent.remainingDistance <= agent.stoppingDistance)
+
+        else
         {
-            Vector3 point;
-            if(Wandering(transform.position, range, out point))
-            {
-                agent.SetDestination(point);
-            }
+            Debug.Log($"{distance}" + $" player detected  radius is {lookRadius * mainDungeon.scale}");
+            transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
+
+        //stay on the Y axis
+        transform.position = new Vector3(transform.position.x,
+            target.gameObject.GetComponent<Movement>().Y_Constraint.transform.position.y, transform.position.z);
 
     }
 
@@ -51,17 +53,17 @@ public class EnemyMovement : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
 
-    bool Wandering(Vector3 center, float range, out Vector3 result)
+    void IdleMovements()
     {
-        Vector3 randomPoint = center + Random.insideUnitSphere * range;
-        NavMeshHit hit;
-        if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
-        {
-            result = hit.position;
-            return true;
-        }
-
-        result = Vector3.zero;
-        return false;
+        Vector3 startPosition = transform.position; 
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.gameObject.tag == "Player")
+        {
+            Debug.Log("Hit the Player, battle time");
+        }
+    }
+
 }

@@ -19,11 +19,23 @@ public class Room : MonoBehaviour
     public GameObject room;
     [SerializeField] bool isEmpty;
     public Dungeon mainDungeon;
+    public GameObject enemy;
     private void Start()
     {
         isEmpty = true;
         mainDungeon = FindObjectOfType<Dungeon>();
         Invoke("GetArea", .2f);
+
+        //have a chance of spawning an enemy in the room 1/10 chance
+        if(Random.Range(0,10) == 1)
+        {
+            var enemySpawned = Instantiate(enemy, transform.position, enemy.transform.rotation);
+            enemySpawned.transform.localScale = enemy.transform.localScale * mainDungeon.scale;
+            enemySpawned.transform.parent = gameObject.transform;
+            
+        }
+        
+
     }
     public void GetArea()
     {
@@ -37,6 +49,7 @@ public class Room : MonoBehaviour
         //{
         //    room.SetActive(false);
         //}
+
 
     }
 
@@ -70,7 +83,7 @@ public class Room : MonoBehaviour
 
     //private void OnTriggerStay(Collider other)
     //{
-    //   // Debug.Log("Something inside");
+    //    // Debug.Log("Something inside");
     //    if (other.CompareTag("Player"))
     //    {
     //        room.SetActive(true);

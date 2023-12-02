@@ -151,7 +151,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5655255625214041666}
   - {fileID: 4593385811543864688}
@@ -177,6 +177,7 @@ MonoBehaviour:
   room: {fileID: 6337506558910387839}
   isEmpty: 0
   mainDungeon: {fileID: 0}
+  enemy: {fileID: 174258685521222120, guid: 06f49095cc744a140855661319b3e666, type: 3}
 --- !u!65 &6524403986101890540
 BoxCollider:
   m_ObjectHideFlags: 0

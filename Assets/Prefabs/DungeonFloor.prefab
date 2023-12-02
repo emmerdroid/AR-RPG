@@ -83,10 +83,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3954757751002038916}
+  - component: {fileID: 1251343878999097604}
   - component: {fileID: 3954757751002038923}
   - component: {fileID: 3954757751002038922}
   - component: {fileID: 3954757751002038921}
-  - component: {fileID: 1251343878999097604}
   m_Layer: 0
   m_Name: DungeonFloor
   m_TagString: Untagged
@@ -110,6 +110,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1251343878999097604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3954757751002038920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d75c0811ca84b098a28c43d87bc54e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rooms:
+  - {fileID: 2459440598210367934, guid: a3ac21730a54b464f95f1826a4e06e24, type: 3}
+  - {fileID: 2715371377633095185, guid: 11664bde6ca8343ec9d4f431fa42358e, type: 3}
+  - {fileID: 2432157431000108206, guid: 08fbfa485df034a468156628452d8f67, type: 3}
+  dungeonRooms:
+  - {fileID: 7446938463557130023, guid: 6d7b05b33bb65a6499324e19076c6270, type: 3}
+  - {fileID: 8787668266936700511, guid: 74f97ffe9e876cf498879fc276eb7b80, type: 3}
+  - {fileID: 3269679674372672598, guid: d7d57ba62c07bfe498e261c19227989c, type: 3}
+  - {fileID: 8055137383430370204, guid: b66e4ead23233954d9285ce84e21274a, type: 3}
+  - {fileID: 984818873458308013, guid: ec9469bd91add3d4fbece9eda2e9d873, type: 3}
+  - {fileID: 910609104803383006, guid: f258f404674004f40ab75fc4e9588a66, type: 3}
+  - {fileID: 2236068591009765457, guid: d6ca78307ebe66a42b5ed31556c491fd, type: 3}
+  - {fileID: 4530636890134171865, guid: 8fc8fb0794c52cd4f8b5995109e1264d, type: 3}
+  - {fileID: 7798486604342268387, guid: 1fdded0f227e0ad4f977dd680474da06, type: 3}
+  size: 9
+  playerPos: 0
+  currentRoom: {fileID: 0}
+  player: {fileID: 0}
+  AROrigin: {fileID: 0}
+  upEnt: {fileID: 0}
+  downEnt: {fileID: 0}
+  leftEnt: {fileID: 0}
+  rightEnt: {fileID: 0}
+  scale: 0
 --- !u!33 &3954757751002038923
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -174,36 +210,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1251343878999097604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3954757751002038920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1d75c0811ca84b098a28c43d87bc54e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rooms:
-  - {fileID: 2459440598210367934, guid: a3ac21730a54b464f95f1826a4e06e24, type: 3}
-  - {fileID: 2715371377633095185, guid: 11664bde6ca8343ec9d4f431fa42358e, type: 3}
-  - {fileID: 2432157431000108206, guid: 08fbfa485df034a468156628452d8f67, type: 3}
-  dungeonRooms:
-  - {fileID: 7446938463557130023, guid: 6d7b05b33bb65a6499324e19076c6270, type: 3}
-  - {fileID: 8787668266936700511, guid: 74f97ffe9e876cf498879fc276eb7b80, type: 3}
-  - {fileID: 3269679674372672598, guid: d7d57ba62c07bfe498e261c19227989c, type: 3}
-  - {fileID: 8055137383430370204, guid: b66e4ead23233954d9285ce84e21274a, type: 3}
-  - {fileID: 984818873458308013, guid: ec9469bd91add3d4fbece9eda2e9d873, type: 3}
-  - {fileID: 910609104803383006, guid: f258f404674004f40ab75fc4e9588a66, type: 3}
-  - {fileID: 2236068591009765457, guid: d6ca78307ebe66a42b5ed31556c491fd, type: 3}
-  - {fileID: 4530636890134171865, guid: 8fc8fb0794c52cd4f8b5995109e1264d, type: 3}
-  - {fileID: 7798486604342268387, guid: 1fdded0f227e0ad4f977dd680474da06, type: 3}
-  size: 9
-  playerPos: 0
-  currentRoom: {fileID: 0}
-  player: {fileID: 0}
 --- !u!1001 &574406760
 PrefabInstance:
   m_ObjectHideFlags: 0

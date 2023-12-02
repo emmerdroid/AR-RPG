@@ -8,12 +8,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/TestAR.unity
     guid: 9b2961067659a40668e2957a291c9211
-  - enabled: 1
-    path: Assets/Scenes/TestingRoom.unity
-    guid: 117ad52fe205541fd9bb5b686be6b4cf
   - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: 1bc82462e5e5549b38434717cf1e95ef
+  - enabled: 1
+    path: Assets/Scenes/TestingRoom.unity
+    guid: 117ad52fe205541fd9bb5b686be6b4cf
   - enabled: 0
     path: Assets/Scenes/BlankAR.unity
     guid: 6bdce89659816455b9f906fc62d19910

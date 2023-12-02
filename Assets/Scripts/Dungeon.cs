@@ -18,6 +18,7 @@ public class Dungeon : MonoBehaviour
     public GameObject AROrigin;
     public GameObject upEnt, downEnt, leftEnt, rightEnt;
     public float scale;
+    public GameObject DebugMenu;
 
     
     // Start is called before the first frame update
@@ -30,7 +31,14 @@ public class Dungeon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //check the x y and z and round the nearest divisible of 5
+
+
+    }
+
+    private void FixedUpdate()
+    {
+      
     }
 
     public void TransitionToRoom(Movement.DIRECTION direction)
@@ -59,7 +67,29 @@ public class Dungeon : MonoBehaviour
             player.transform.position = leftEnt.transform.position;
         }
 
+        //after the things move, update to allign correctly
+        //transform.position = new Vector3(RoundToNearestMultiple(transform.position.x,5), 
+        //    RoundToNearestMultiple(transform.position.y,5), RoundToNearestMultiple(transform.position.z,5));
+        //
+
         
+    }
+
+    public void FixAllignment()
+    {
+        transform.position = new Vector3(RoundToNearestMultiple(transform.position.x, 5),
+            transform.position.y, RoundToNearestMultiple(transform.position.z,5));
+    }
+
+    //this would be better in a different file, but due to time this will do
+    public void ShowDebug()
+    {
+        DebugMenu.SetActive(!DebugMenu.activeSelf);
+    }
+    public static float RoundToNearestMultiple(float number, int multiple)
+    {
+        float roundedNumber = Mathf.RoundToInt(number/multiple) * multiple;
+        return roundedNumber;
     }
 
    

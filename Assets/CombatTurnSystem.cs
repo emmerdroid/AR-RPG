@@ -44,6 +44,7 @@ public class CombatTurnSystem : MonoBehaviour
         {
 
             Debug.Log("Get Ready To defend");
+            Invoke("StartEnemyTurn", 2f);
             
 
         }
@@ -127,7 +128,11 @@ public class CombatTurnSystem : MonoBehaviour
 
     void StartEnemyTurn()
     {
-        MoveCursor();
-        CheckTap();
+        if(currentTurn == TurnState.Enemy)
+        {
+            MoveCursor();
+            CheckTap();
+
+        }
     }
 }

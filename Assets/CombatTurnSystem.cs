@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum TurnState
+/*public enum TurnState
 {
     Player,
     Enemy
 }
+*/
 public class CombatTurnSystem : MonoBehaviour
 {
 
@@ -44,7 +45,6 @@ public class CombatTurnSystem : MonoBehaviour
         {
 
             Debug.Log("Get Ready To defend");
-            Invoke("StartEnemyTurn", 2f);
             
 
         }
@@ -128,11 +128,7 @@ public class CombatTurnSystem : MonoBehaviour
 
     void StartEnemyTurn()
     {
-        if(currentTurn == TurnState.Enemy)
-        {
-            MoveCursor();
-            CheckTap();
-
-        }
+        MoveCursor();
+        CheckTap();
     }
 }

@@ -39,7 +39,7 @@ public class combat_Turn : MonoBehaviour
     {
         if(!turnOver)
         {
-            this.transform.localPosition = new Vector3(this.transform.localPosition.x - 20f, 528f, 0f);
+            this.transform.localPosition = new Vector3(this.transform.localPosition.x - 50f, 528f, 0f);
         }
         else
         {

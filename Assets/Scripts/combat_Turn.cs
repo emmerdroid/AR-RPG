@@ -19,12 +19,15 @@ public class combat_Turn : MonoBehaviour
     public bool turnOver = false;
     public TMP_Text turnLabel;
     public TMP_Text countdown;
+    public combat_input accessHP;
     public TurnState currentTurn = TurnState.Player;
+    public GameManager manager;
     // Start is called before the first frame update
     void Start()
     {
         turnLabel.gameObject.SetActive(false);
         countdown.gameObject.SetActive(false);
+        accessHP = FindObjectOfType<combat_input>();
         currentTime = startTime;
         this.transform.localPosition = new Vector3(1570f, 528f, 0f);
         randomNum = Random.Range(3,7);
@@ -53,6 +56,21 @@ public class combat_Turn : MonoBehaviour
         {
             this.transform.localPosition = new Vector3(1570f, 528f, 0f);
             randomNum -= 1;
+            if(currentTurn == TurnState.Enemy)
+            {
+                int damage = Random.Range(18,23);
+                manager.DamagePlayer(damage);
+                accessHP.playerHP -= damage;
+                accessHP.ChangeHP();
+                Debug.Log("Ouch");
+                turnLabel.text = "Ouch";
+                turnLabel.gameObject.SetActive(true);
+            }
+            if(currentTurn == TurnState.Player)
+            {
+                turnLabel.text = "Miss";
+                turnLabel.gameObject.SetActive(true);
+            }
         }
 
         if(randomNum <= 0)

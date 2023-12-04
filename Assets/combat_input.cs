@@ -37,6 +37,7 @@ public class combat_input : MonoBehaviour
                 {
                     //it is player turn so damage the enemy
                     turnChecker.turnLabel.text = "Hit";
+                    turnChecker.turnLabel.gameObject.SetActive(true);
                     enemyHP -= Random.Range(18, 23);
                     ChangeEnemyHP();
                     Debug.Log("Hit");
@@ -45,7 +46,8 @@ public class combat_input : MonoBehaviour
                 if(turnChecker.currentTurn == TurnState.Enemy)
                 {
                     //blocked so player takes no damage or maybe little damage
-                    turnChecker.turnLabel.text = "Hit";
+                    turnChecker.turnLabel.text = "Block";
+                    turnChecker.turnLabel.gameObject.SetActive(true);
                     Debug.Log("Block");
 
                 }
@@ -60,6 +62,7 @@ public class combat_input : MonoBehaviour
                     //player turn so miss
                     Debug.Log("Miss");
                     turnChecker.turnLabel.text = "Miss";
+                    turnChecker.turnLabel.gameObject.SetActive(true);
                 }
                 //miss/take damage
                 if(turnChecker.currentTurn == TurnState.Enemy)
@@ -70,19 +73,22 @@ public class combat_input : MonoBehaviour
                     manager.DamagePlayer(damage);
                     playerHP -= damage;
                     ChangeHP();
+                    turnChecker.turnLabel.text = "Ouch";
+                    turnChecker.turnLabel.gameObject.SetActive(true);
                     Debug.Log("Ouch");
                 }
             }
              playerHP = manager.PlayerHealth;
 
-            
-            inputPressed = true;
+            markerPos.transform.localPosition = new Vector3(1600f, 528f, 0f);
+            turnChecker.randomNum -= 1;
        }
 
        //if the enemy health is 0 go back to main scene
        if(enemyHP <= 0)
         {
             turnChecker.turnLabel.text = "Victory";
+            turnChecker.turnLabel.gameObject.SetActive(true);
 
             Invoke("CallingGameManager", 1f);
 

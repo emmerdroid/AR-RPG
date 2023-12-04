@@ -39,7 +39,7 @@ public class Room : MonoBehaviour
         else if(!FindAnyObjectByType<Chest>() && gameObject.transform.parent.name != "RoomTemplates" && Random.Range(1,4) > 2 )
         {
             var chest = Instantiate(chestObj, transform.position, enemy.transform.rotation);
-            chest.transform.localScale = enemy.transform.localScale * mainDungeon.scale;
+            chest.transform.localScale = chest.transform.localScale * mainDungeon.scale;
             chest.transform.parent = gameObject.transform;
         }
         

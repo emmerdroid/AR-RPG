@@ -26,10 +26,15 @@ public class Chest : MonoBehaviour
         if (collision.collider.gameObject.tag == "Player")
         {
             Debug.Log("Hit the Player, Chest Found");
-            Invoke(" SceneManager.LoadScene(\"Victory\")", 1f);
+            Invoke("ToVictory", 1f);
             
 
 
         }
+    }
+
+    void ToVictory()
+    {
+        SceneManager.LoadScene("Victory");
     }
 }

@@ -21,7 +21,7 @@ public class combat_Turn : MonoBehaviour
     public TMP_Text countdown;
     public combat_input accessHP;
     public TurnState currentTurn = TurnState.Player;
-    public GameManager manager;
+    //public GameManager manager;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +31,7 @@ public class combat_Turn : MonoBehaviour
         currentTime = startTime;
         this.transform.localPosition = new Vector3(1570f, 528f, 0f);
         randomNum = Random.Range(3,7);
+        
     }
 
     // Update is called once per frame
@@ -59,7 +60,7 @@ public class combat_Turn : MonoBehaviour
             if(currentTurn == TurnState.Enemy)
             {
                 int damage = Random.Range(18,23);
-                manager.DamagePlayer(damage);
+                //manager.DamagePlayer(damage);
                 accessHP.playerHP -= damage;
                 accessHP.ChangeHP();
                 Debug.Log("Ouch");

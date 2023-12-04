@@ -23,6 +23,11 @@ public class GameManager : MonoBehaviour
     //player health
     private int playerHealth = 100;
 
+    private void Start()
+    {
+        playerHealth = 100;
+    }
+
     //getter and setter
     public int PlayerHealth
     {
@@ -69,6 +74,7 @@ public class GameManager : MonoBehaviour
 
             //go to a game over scene or something
             SceneManager.LoadScene("GameOver");
+            Destroy(gameObject); 
             
 
 

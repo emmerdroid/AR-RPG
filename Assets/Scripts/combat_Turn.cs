@@ -26,7 +26,7 @@ public class combat_Turn : MonoBehaviour
         turnLabel.gameObject.SetActive(false);
         countdown.gameObject.SetActive(false);
         currentTime = startTime;
-        this.transform.localPosition = new Vector3(370f, 125f, 0f);
+        this.transform.localPosition = new Vector3(1570f, 528f, 0f);
         randomNum = Random.Range(3,7);
     }
 
@@ -35,7 +35,7 @@ public class combat_Turn : MonoBehaviour
     {
         if(!turnOver)
         {
-            this.transform.localPosition = new Vector3(this.transform.localPosition.x - 1f, 125f, 0f);
+            this.transform.localPosition = new Vector3(this.transform.localPosition.x - 3f, 528f, 0f);
         }
         else
         {
@@ -49,11 +49,12 @@ public class combat_Turn : MonoBehaviour
             }
         }
 
-        if(this.transform.localPosition.x <= -360 && randomNum > 0)
+        if(this.transform.localPosition.x <= -1575 && randomNum > 0)
         {
-            this.transform.localPosition = new Vector3(370f, 125f, 0f);
+            this.transform.localPosition = new Vector3(1570f, 528f, 0f);
             randomNum -= 1;
         }
+
         if(randomNum <= 0)
         {
             randomNum = 0;

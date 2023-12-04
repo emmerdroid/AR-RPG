@@ -39,7 +39,7 @@ public class combat_Turn : MonoBehaviour
         }
         else
         {
-            currentTime -= 1 * Time.deltaTime;
+            currentTime -= 5 * Time.deltaTime;
             countdown.text = currentTime.ToString("0");
             if(currentTime <= 0)
             {

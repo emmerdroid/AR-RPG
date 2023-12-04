@@ -35,11 +35,11 @@ public class combat_Turn : MonoBehaviour
     {
         if(!turnOver)
         {
-            this.transform.localPosition = new Vector3(this.transform.localPosition.x - 3f, 528f, 0f);
+            this.transform.localPosition = new Vector3(this.transform.localPosition.x - 20f, 528f, 0f);
         }
         else
         {
-            currentTime -= 5 * Time.deltaTime;
+            currentTime -= 1 * Time.deltaTime;
             countdown.text = currentTime.ToString("0");
             if(currentTime <= 0)
             {

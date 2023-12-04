@@ -23,18 +23,56 @@ public class GameManager : MonoBehaviour
     //player health
     private float playerHealth = 100f;
 
+    //getter and setter
+    public float PlayerHealth
+    {
+        get { return playerHealth; }
+        set { playerHealth = value; }
+    }
+
     //dungeon transformation
-    //private 
+    private Vector3 dungeonPosition;
 
-    // Start is called before the first frame update
-    void Start()
+    //getter and setter for dungeon position
+    public Vector3 DungeonPosition
     {
-        
+        get { return dungeonPosition; }
+        set { dungeonPosition = value; }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DamagePlayer(float damageAmount)
     {
-        
+        playerHealth -= damageAmount;
+
+        //checking that player is dead
+        if(playerHealth <= 0) 
+        {
+            Debug.Log("You Died Game Over");
+
+            //go to a game over scene or something
+
+
+        }
     }
+
+    public void LoadCombatScene()
+    {
+        //saving the dungeon position
+        dungeonPosition = GameObject.FindAnyObjectByType<Dungeon>().gameObject.transform.position;
+        //Load the combat scene additive
+        SceneManager.LoadScene("ProperCombat", LoadSceneMode.Additive);
+
+    }
+
+    public void ReturnToDungeon()
+    {
+        //unloading the combat scene
+        SceneManager.UnloadSceneAsync("ProperCombat");
+
+        //have the dungeon position properly moved
+        GameObject.FindAnyObjectByType<Dungeon>().gameObject.transform.position = dungeonPosition;
+
+    }
+
+
 }

@@ -159,6 +159,8 @@ MonoBehaviour:
   isEmpty: 0
   mainDungeon: {fileID: 0}
   enemy: {fileID: 174258685521222120, guid: 06f49095cc744a140855661319b3e666, type: 3}
+  chestObj: {fileID: 4860753886916004425, guid: 02fca917e97dc5d438f6fce175c81333,
+    type: 3}
 --- !u!1 &5896324427358345040
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,6 +20,7 @@ public class Room : MonoBehaviour
     [SerializeField] bool isEmpty;
     public Dungeon mainDungeon;
     public GameObject enemy;
+    public GameObject chestObj;
     private void Start()
     {
         isEmpty = true;
@@ -33,6 +34,13 @@ public class Room : MonoBehaviour
             enemySpawned.transform.localScale = enemy.transform.localScale * mainDungeon.scale;
             enemySpawned.transform.parent = gameObject.transform;
             
+        }
+        //if a chest not exist
+        else if(!FindAnyObjectByType<Chest>() && gameObject.transform.parent.name != "RoomTemplates" && Random.Range(1,4) > 2 )
+        {
+            var chest = Instantiate(chestObj, transform.position, enemy.transform.rotation);
+            chest.transform.localScale = enemy.transform.localScale * mainDungeon.scale;
+            chest.transform.parent = gameObject.transform;
         }
         
 

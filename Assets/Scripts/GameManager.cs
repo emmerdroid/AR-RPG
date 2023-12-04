@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("You Died Game Over");
 
             //go to a game over scene or something
+            SceneManager.LoadScene("GameOver");
             
 
 

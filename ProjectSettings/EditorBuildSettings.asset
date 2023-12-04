@@ -26,6 +26,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ProperCombat.unity
     guid: cf1fa8e8b067f1049bd896d6885d1465
+  - enabled: 1
+    path: Assets/Scenes/Victory.unity
+    guid: 98bf6d45b73dd2f458ac9cb904f33934
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 2589fb8dd345f3644977988327ef8fc0
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}

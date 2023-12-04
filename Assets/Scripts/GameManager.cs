@@ -21,10 +21,10 @@ public class GameManager : MonoBehaviour
     }
 
     //player health
-    private float playerHealth = 100f;
+    private int playerHealth = 100;
 
     //getter and setter
-    public float PlayerHealth
+    public int PlayerHealth
     {
         get { return playerHealth; }
         set { playerHealth = value; }
@@ -40,7 +40,25 @@ public class GameManager : MonoBehaviour
         set { dungeonPosition = value; }
     }
 
-    public void DamagePlayer(float damageAmount)
+    //get the enemy that hit player
+    private GameObject enemyHitPlayer;
+
+    //setter
+    public void SetEnemy(GameObject enemy)
+    {
+        enemyHitPlayer = enemy;
+    }
+
+    //Destroy enemy once defeated
+    public void DestroyEnemy()
+    {
+        if(enemyHitPlayer != null)
+        {
+            Destroy(enemyHitPlayer);
+        }
+    }
+
+    public void DamagePlayer(int damageAmount)
     {
         playerHealth -= damageAmount;
 
@@ -50,6 +68,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("You Died Game Over");
 
             //go to a game over scene or something
+            
 
 
         }
@@ -59,6 +78,8 @@ public class GameManager : MonoBehaviour
     {
         //saving the dungeon position
         dungeonPosition = GameObject.FindAnyObjectByType<Dungeon>().gameObject.transform.position;
+
+        DisableSceneObjects();
         //Load the combat scene additive
         SceneManager.LoadScene("ProperCombat", LoadSceneMode.Additive);
 
@@ -70,8 +91,38 @@ public class GameManager : MonoBehaviour
         SceneManager.UnloadSceneAsync("ProperCombat");
 
         //have the dungeon position properly moved
+        EnableSceneObjects();
         GameObject.FindAnyObjectByType<Dungeon>().gameObject.transform.position = dungeonPosition;
 
+
+    }
+
+    void DisableSceneObjects()
+    {
+        GameObject[] sceneObjects = SceneManager.GetActiveScene().GetRootGameObjects();
+        foreach(var obj in sceneObjects)
+        {
+            //make sure game manager not included
+            if (obj != gameObject && obj.activeSelf)
+            {
+                obj.SetActive(false);
+            }
+
+        }
+
+    }
+
+    void EnableSceneObjects()
+    {
+        GameObject[] sceneObjects = SceneManager.GetActiveScene().GetRootGameObjects();
+
+        foreach( var obj in sceneObjects)
+        {
+            if (obj != gameObject && !obj.activeSelf) 
+            {
+                obj.SetActive(true);
+            }
+        }
     }
 
 

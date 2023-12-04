@@ -25,7 +25,7 @@ public class combat_input : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(Input.GetKeyUp(KeyCode.Space) || Input.touchCount > 0)
+       if(Input.GetKeyUp(KeyCode.Space) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
        {
             if(markerPos.transform.localPosition.x <= 120 && markerPos.transform.localPosition.x >= -120)
             {
@@ -67,12 +67,16 @@ public class combat_input : MonoBehaviour
                     Debug.Log("Ouch");
                 }
             }
+             playerHP = manager.PlayerHealth;
+
+            
        }
 
        //if the enemy health is 0 go back to main scene
        if(enemyHP <= 0)
         {
             turnChecker.turnLabel.text = "Victory";
+
             Invoke("CallingGameManager", 1f);
 
         }
@@ -90,6 +94,7 @@ public class combat_input : MonoBehaviour
 
     void CallingGameManager()
     {
+        manager.DestroyEnemy();
         manager.ReturnToDungeon();
     }
 }

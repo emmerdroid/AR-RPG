@@ -26,8 +26,8 @@ public class Room : MonoBehaviour
         mainDungeon = FindObjectOfType<Dungeon>();
         Invoke("GetArea", .2f);
 
-        //have a chance of spawning an enemy in the room 1/10 chance
-        if(Random.Range(0,10) == 1)
+        //have a chance of spawning an enemy in the room 1/6 chance
+        if(Random.Range(0,6) == 1 && gameObject.transform.parent.name != "RoomTemplates")
         {
             var enemySpawned = Instantiate(enemy, transform.position, enemy.transform.rotation);
             enemySpawned.transform.localScale = enemy.transform.localScale * mainDungeon.scale;

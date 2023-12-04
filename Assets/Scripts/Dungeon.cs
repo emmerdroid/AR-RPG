@@ -20,18 +20,21 @@ public class Dungeon : MonoBehaviour
     public float scale;
     public GameObject DebugMenu;
 
+
     
     // Start is called before the first frame update
     void Start()
     {
         AROrigin = FindObjectOfType<ARSessionOrigin>().gameObject;
+        
        
     }
 
     // Update is called once per frame
     void Update()
     {
-        //check the x y and z and round the nearest divisible of 5
+        //check to see how many enemies there are
+
 
 
     }

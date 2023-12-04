@@ -9,7 +9,8 @@ public class EnemyMovement : MonoBehaviour
     public float lookRadius;
     public float speed;
     Transform target;
-    
+    public GameManager manager;
+
     //get reference to the dugneon scale
     public Dungeon mainDungeon;
 
@@ -17,7 +18,7 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         target = FindObjectOfType<Movement>().gameObject.transform;
-        
+        manager = GameManager.Instance;
         mainDungeon = FindObjectOfType<Dungeon>();
 
     }
@@ -63,6 +64,10 @@ public class EnemyMovement : MonoBehaviour
         if(collision.collider.gameObject.tag == "Player")
         {
             Debug.Log("Hit the Player, battle time");
+            manager.SetEnemy(gameObject);
+            manager.LoadCombatScene();
+
+
         }
     }
 

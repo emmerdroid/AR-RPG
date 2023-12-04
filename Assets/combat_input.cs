@@ -8,11 +8,13 @@ public class combat_input : MonoBehaviour
 {
     public Slider playerHP_Bar;
     public Slider enemyHP_Bar;
+    public Image Marker;
     public int enemyHP = 100;
     public int playerHP = 100;
     public Transform markerPos;
     public combat_Turn turnChecker;
     public GameManager manager;
+    public bool inputPressed = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +27,10 @@ public class combat_input : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
        if(Input.GetKeyUp(KeyCode.Space) || Input.touchCount > 0)
        {
-            if(markerPos.transform.localPosition.x <= 120 && markerPos.transform.localPosition.x >= -120)
+            if(markerPos.transform.localPosition.x <= 100 && markerPos.transform.localPosition.x >= -100)
             {
                 Debug.Log("Correct time");
                 //Damage the enemy/good defense
@@ -36,6 +39,7 @@ public class combat_input : MonoBehaviour
                     //it is player turn so damage the enemy
                     turnChecker.turnLabel.text = "Hit";
                     enemyHP -= Random.Range(18, 23);
+                    ChangeEnemyHP();
                     Debug.Log("Hit");
 
                 }
@@ -63,10 +67,14 @@ public class combat_input : MonoBehaviour
                 {
                     //enemy turn so damage player
                     //random range around 19-23 damage
-                    manager.DamagePlayer(Random.Range(18,23));
+                    int damage = Random.Range(18,23);
+                    manager.DamagePlayer(damage);
+                    playerHP -= damage;
+                    ChangeHP();
                     Debug.Log("Ouch");
                 }
             }
+            inputPressed = true;
        }
 
        //if the enemy health is 0 go back to main scene
@@ -92,6 +100,7 @@ public class combat_input : MonoBehaviour
     {
         manager.ReturnToDungeon();
     }
+
 }
 
 

@@ -3,7 +3,18 @@ guid: c8fef50451a52cc4cbd1f2342eb66ee3
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerHP_Bar: {instanceID: 0}
+  - enemyHP_Bar: {instanceID: 0}
+  - Marker: {instanceID: 0}
+  - source: {instanceID: 0}
+  - hit: {fileID: 8300000, guid: 9f41678b01b76cc4c8e58b2c3601c8fe, type: 3}
+  - miss: {fileID: 8300000, guid: ee09519aac4fe6f478cdde4dbfe3e567, type: 3}
+  - player_Take_Dmg: {fileID: 8300000, guid: 838132e2980d09f4b9264091ee02387f, type: 3}
+  - block: {fileID: 8300000, guid: 0bb117102d0de5b48952b53487afd9c8, type: 3}
+  - markerPos: {instanceID: 0}
+  - turnChecker: {instanceID: 0}
+  - manager: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

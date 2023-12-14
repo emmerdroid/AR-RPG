@@ -20,6 +20,8 @@ public class combat_Turn : MonoBehaviour
     public TMP_Text turnLabel;
     public TMP_Text countdown;
     public combat_input accessHP;
+    public AudioClip miss, player_Take_Dmg;
+    public AudioSource accessAudioSource;   
     public TurnState currentTurn = TurnState.Player;
     //public GameManager manager;
     // Start is called before the first frame update
@@ -28,6 +30,8 @@ public class combat_Turn : MonoBehaviour
         turnLabel.gameObject.SetActive(false);
         countdown.gameObject.SetActive(false);
         accessHP = FindObjectOfType<combat_input>();
+        accessAudioSource = FindObjectOfType<AudioSource>();
+
         currentTime = startTime;
         this.transform.localPosition = new Vector3(1570f, 528f, 0f);
         randomNum = Random.Range(3,7);
@@ -66,11 +70,16 @@ public class combat_Turn : MonoBehaviour
                 Debug.Log("Ouch");
                 turnLabel.text = "Ouch";
                 turnLabel.gameObject.SetActive(true);
+                accessAudioSource.clip = player_Take_Dmg;
+                accessAudioSource.Play();
+               
             }
             if(currentTurn == TurnState.Player)
             {
                 turnLabel.text = "Miss";
                 turnLabel.gameObject.SetActive(true);
+                accessAudioSource.clip = miss;
+                accessAudioSource.Play();
             }
         }
 

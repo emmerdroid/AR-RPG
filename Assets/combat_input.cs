@@ -9,6 +9,8 @@ public class combat_input : MonoBehaviour
     public Slider playerHP_Bar;
     public Slider enemyHP_Bar;
     public Image Marker;
+    public AudioSource source;
+    public AudioClip hit, miss, player_Take_Dmg, block;
     public int enemyHP = 100;
     public int playerHP = 100;
     public Transform markerPos;
@@ -41,6 +43,8 @@ public class combat_input : MonoBehaviour
                     enemyHP -= Random.Range(18, 23);
                     ChangeEnemyHP();
                     Debug.Log("Hit");
+                    source.clip = hit;
+                    source.Play();
 
                 }
                 if(turnChecker.currentTurn == TurnState.Enemy)
@@ -49,6 +53,8 @@ public class combat_input : MonoBehaviour
                     turnChecker.turnLabel.text = "Block";
                     turnChecker.turnLabel.gameObject.SetActive(true);
                     Debug.Log("Block");
+                    source.clip = block;
+                    source.Play();
 
                 }
                 
@@ -63,6 +69,8 @@ public class combat_input : MonoBehaviour
                     Debug.Log("Miss");
                     turnChecker.turnLabel.text = "Miss";
                     turnChecker.turnLabel.gameObject.SetActive(true);
+                    source.clip = miss;
+                    source.Play();
                 }
                 //miss/take damage
                 if(turnChecker.currentTurn == TurnState.Enemy)
@@ -76,6 +84,8 @@ public class combat_input : MonoBehaviour
                     turnChecker.turnLabel.text = "Ouch";
                     turnChecker.turnLabel.gameObject.SetActive(true);
                     Debug.Log("Ouch");
+                    source.clip = player_Take_Dmg;
+                    source.Play();
                 }
             }
              playerHP = manager.PlayerHealth;
